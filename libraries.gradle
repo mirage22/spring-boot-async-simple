@@ -1,0 +1,8 @@
+ext {
+    exampleVersion = "0.0.1-SNAPSHOT"
+    springBootStarterWebVersion = "2.0.0.RELEASE"
+    gradleVersion = "3.5"
+    junitVersion = "4.12"
+    hamcrestAllVersion = "1.3"
+    mockitoAllVersion = "1.10.19"
+}

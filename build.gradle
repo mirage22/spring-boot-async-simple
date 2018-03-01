@@ -1,0 +1,32 @@
+group 'com.mirage22'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+apply from: 'libraries.gradle'
+
+version "${exampleVersion}"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "${gradleVersion}"
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootStarterWebVersion}"
+    compile("org.springframework.boot:spring-boot-starter-actuator:${springBootStarterWebVersion}")
+    compile "org.springframework.boot:spring-boot-starter-freemarker:${springBootStarterWebVersion}"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootStarterWebVersion}"
+    testCompile "junit:junit:${junitVersion}@jar"
+    testCompile "org.hamcrest:hamcrest-all:${hamcrestAllVersion}@jar"
+    testCompile "org.mockito:mockito-all:${mockitoAllVersion}@jar"
+}
