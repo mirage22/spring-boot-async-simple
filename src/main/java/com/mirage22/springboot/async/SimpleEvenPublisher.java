@@ -4,7 +4,6 @@ import com.mirage22.springboot.async.event.SimpleEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -15,7 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author Miroslav Wengner (@miragemiko)
  */
 @Component
-@EnableAsync
 public class SimpleEvenPublisher {
 
     private int counter;
