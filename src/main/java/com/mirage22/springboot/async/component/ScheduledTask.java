@@ -1,4 +1,4 @@
-package com.mirage22.springboot.async;
+package com.mirage22.springboot.async.component;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
@@ -15,8 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class ScheduledTask {
 
 
-    @Async
-    @Scheduled(initialDelay = 1000, fixedRate = 1000)
+//    @Scheduled(initialDelay = 1000, fixedRate = 1000)
     public void sendScheduledMessage(){
         RestTemplate restTemplate = new RestTemplate();
         String resourceUrl

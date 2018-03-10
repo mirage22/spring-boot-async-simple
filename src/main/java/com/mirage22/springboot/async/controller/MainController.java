@@ -1,4 +1,4 @@
-package com.mirage22.springboot.async;
+package com.mirage22.springboot.async.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

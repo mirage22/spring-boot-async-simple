@@ -25,6 +25,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-web:${springBootStarterWebVersion}"
     compile("org.springframework.boot:spring-boot-starter-actuator:${springBootStarterWebVersion}")
     compile "org.springframework.boot:spring-boot-starter-freemarker:${springBootStarterWebVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
     testCompile "org.springframework.boot:spring-boot-starter-test:${springBootStarterWebVersion}"
     testCompile "junit:junit:${junitVersion}@jar"
     testCompile "org.hamcrest:hamcrest-all:${hamcrestAllVersion}@jar"

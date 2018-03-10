@@ -1,4 +1,4 @@
-package com.mirage22.springboot.async;
+package com.mirage22.springboot.async.listener;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

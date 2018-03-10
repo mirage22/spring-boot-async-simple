@@ -1,6 +1,7 @@
 ext {
     exampleVersion = "0.0.1-SNAPSHOT"
     springBootStarterWebVersion = "2.0.0.RELEASE"
+    lombokVersion = "1.16.20"
     gradleVersion = "3.5"
     junitVersion = "4.12"
     hamcrestAllVersion = "1.3"

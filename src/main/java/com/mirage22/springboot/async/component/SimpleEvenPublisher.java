@@ -1,4 +1,4 @@
-package com.mirage22.springboot.async;
+package com.mirage22.springboot.async.component;
 
 import com.mirage22.springboot.async.event.SimpleEvent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author Miroslav Wengner (@miragemiko)
@@ -16,16 +17,16 @@ import java.util.concurrent.ThreadLocalRandom;
 @Component
 public class SimpleEvenPublisher {
 
-    private int counter;
+    private AtomicInteger counter = new AtomicInteger(0);
 
     @Autowired
     private ApplicationEventPublisher applicationEventPublisher;
 
     @Async
     public void actionAndPublishEvent(final String message) {
-        SimpleEvent simpleEvent = new SimpleEvent(this, message, counter++, LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
+        SimpleEvent simpleEvent = new SimpleEvent(this, message, counter.getAndIncrement(), LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
         int delay = ThreadLocalRandom.current().nextInt(5000, 10000);
-        System.out.println(getClass().getSimpleName() + "message: " + message + ", delay: " + delay + ", counter:" + counter);
+        System.out.println(getClass().getSimpleName() + "message: " + message + ", delay: " + delay + ", counter:" + counter.get());
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {

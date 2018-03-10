@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 
 @EnableAsync
-@EnableScheduling
+//@EnableScheduling
 @SpringBootApplication
 public class SimpleWebApplicationTests {
     public static void main(String[] args) {
