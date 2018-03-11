@@ -19,7 +19,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 
 @RestController
-@RequestMapping("/")
 public class JsonSimpleController {
 
     private final AtomicInteger counter = new AtomicInteger(0);
