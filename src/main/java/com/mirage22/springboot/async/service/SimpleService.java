@@ -8,4 +8,6 @@ import com.mirage22.springboot.async.dto.SimpleResponse;
 public interface SimpleService {
 
     SimpleResponse getSimpleResponse();
+
+    Double getDouble();
 }

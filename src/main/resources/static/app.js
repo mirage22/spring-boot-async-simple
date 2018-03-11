@@ -43,7 +43,7 @@ function setConnected(connected) {
     else {
         $("#conversation").hide();
     }
-    $("#greetings").html("");
+    $("#numbers").html("");
 }
 
 function connect() {
@@ -53,8 +53,12 @@ function connect() {
         setConnected(true);
         console.log('Connected: ' + frame);
         stompClient.subscribe('/socket/topic/number', function (simpleResponse) {
-            showGreeting(JSON.parse(simpleResponse.body).number);
+            showNumber(JSON.parse(simpleResponse.body).number);
         });
+        stompClient.subscribe('/socket/topic/location', function(locationResponse){
+            var location = JSON.parse(locationResponse.body);
+            showLocation(location.longitude, location.latitude);
+        })
     });
 }
 
@@ -70,9 +74,12 @@ function sendName() {
     stompClient.send("/app/number", {}, JSON.stringify({'name': $("#name").val()}));
 }
 
-function showGreeting(message) {
-    console.log("magic: " + message)
-    $("#greetings").append("<tr><td>" + message + "</td></tr>");
+function showNumber(message) {
+    $("#numbers").append("<tr><td>" + message + "</td></tr>");
+}
+
+function showLocation(longitude, latitude){
+    $("#locationPoint").html("longitude: " + longitude + ", latitude: " + latitude);
 }
 
 $(function () {

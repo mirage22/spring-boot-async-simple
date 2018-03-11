@@ -21,4 +21,9 @@ public class SimpleServiceImp implements SimpleService {
         result.setNumber(random.nextInt(0, 1000));
         return result;
     }
+
+    @Override
+    public Double getDouble() {
+        return random.nextDouble(0, 200);
+    }
 }

@@ -54,6 +54,19 @@
             </form>
         </div>
     </div>
+    <div class="col-md-6">
+        <table>
+            <tr>
+                <th>geo-location</th>
+            </tr>
+            <tr>
+                <th>
+                    <div id="locationPoint">
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <table id="conversation" class="table table-striped">
@@ -62,7 +75,7 @@
                     <th>Number</th>
                 </tr>
                 </thead>
-                <tbody id="greetings">
+                <tbody id="numbers">
                 </tbody>
             </table>
         </div>
